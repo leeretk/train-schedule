@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>TrainSchedule</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets\css\style.css">
+</head>
+
+<div class="transbox">
+    
+    <img srcset="assets\images\rafael-leao-YJ4hqRchpWE-unsplash.jpg"  style="opacity:0.4;filter:alpha(opacity=40)"
+    >
+
+</div>
+
+<body style="background-color: gray;">
+
+    <div class="container">
+        <div class="jumbotron" style="background-color:lightsteelblue; color: white;">
+            <h1 class="text-center">
+                <strong><i class="fa fa-newspaper-o"></i> Train Schedule </strong>
+            </h1>
+        </div>
+    </div>
+
+    <!-- ******IMAGES LARGE CONTAINER******* -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card container">
+
+                    <div class="card-header text-center"
+                        style="background-color:darkgray; color: white;font-size: 20px;">
+                        <strong><i class="fa fa-table"></i>Train Schedule </strong>
+                    </div>
+                                     <!-- id="train-name-input"
+                                        id="frequency-input"
+                                        id="minutes-input"
+                                        id="next-arrival-input" 
+                                        id="destination-input"-->
+
+                    <div class="container col mb-4 justify-content-md-center">
+                        <div class="card container">
+                            <table>
+                                <thead class="container">
+                                    <tr>
+                                        <th scope="col">Train Name</th>
+                                        <th scope="col">Destination</th>
+                                        <th scope="col">Frequency (Min)</th>
+                                        <th scope="col">Minutes to Arrival</th>
+                                        <th scope="col">Next Arrival</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr id="trainId1">
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr id="trainId2">
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr id="trainId3">
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                    <tr id="trainId4">
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                    <tr id="trainId5">
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                    <tr id="trainId6">
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+<!-- 
+                        <div class="card-body">
+                                <p id="" alt="" style="padding: 15px;"></p>
+                            </div>
+                        </div> -->
+                    </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <!-- ROW FOR ADDING NEW TRAINS -->
+    <div class=container>
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <br>
+
+                <!-- ****** ADD A NEW TRAIN HEADER ******* -->
+                <div class="card  text-center">
+
+                    <div class="card-header" style="font-size: 20px; background-color: #236192; color: white">
+                        <strong><i class="fa fa-list-alt"></i> Add New Train </strong>
+                    </div>
+
+                    <!-- ******INPUT FORM TO ADD A NEW TRAIN*******-->
+                    <div class="card-body">
+                        <form role="form" style="font-size: 30px;  padding-left:200px;padding-right: 200px;">
+                            <div class="form-group">
+                                <form>
+                                    <div class="form-group row">
+                                        <label for="staticEmail"
+                                            class="col-sm-2 col-form-label">train-name-input</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" readonly class="form-control-plaintext" id="staticEmail"
+                                                value="email@example.com">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="destination-input"
+                                            class="col-sm-2 col-form-label">destination-input</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="destination-input">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="frequency-input"
+                                            class="col-sm-2 col-form-label">frequency-input</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" readonly class="form-control-plaintext"
+                                                id="frequency-input" value="email@example.com">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="minutes-input" class="col-sm-2 col-form-label">minutes-input</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="minutes-input">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="next-arrival-input"
+                                            class="col-sm-2 col-form-label">next-arrival-input</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="next-arrival-input">
+                                        </div>
+                                    </div>
+
+                            </div>
+
+                            <!--******SUBMIT BUTTON*******-->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-secondary buttonSubmit" id="add-new-train">
+                                    <i class="fa fa-search"></i>Add New Train
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--  -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+</body>
+
+
+
+</html>
