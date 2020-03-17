@@ -7,12 +7,22 @@ img {
  }
 
 .row {
-     font-size: 10px;
+     font-size: 14px;
  }
 
  body {
      background-image: url(../images/rafael-leao-YJ4hqRchpWE-unsplash.jpg);
      background-size: cover;
+     background-repeat: no-repeat;
      margin: 10px;
 }
 
+.form {
+    margin-bottom: 20px;
+    
+} 
+
+.container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

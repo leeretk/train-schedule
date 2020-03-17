@@ -12,24 +12,23 @@
     <link rel="stylesheet" href="assets\css\style.css">
 </head>
 
-<body style="background-color: gray; >
+<body style="background-color: gray;">
 
-    <div class=" container">
-    <div class="jumbotron" style="background-color:lightsteelblue; color: white;">
+
+
+    <header class="container" style="color:black;">
         <h1 class="text-center">
-            <strong><i class="fa fa-newspaper-o"></i> Train Schedule </strong>
+            <strong><i class="fa fa-newspaper-o"></i> GCS Train Schedule </strong>
         </h1>
-    </div>
-    </div>
-
+    </header>
+ 
     <!-- ******IMAGES LARGE CONTAINER******* -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="card container">
 
-                    <div class="card-header text-center"
-                        style="background-color:darkgray; color: white;font-size: 20px;">
+                    <div class="card-header text-center">
                         <strong><i class="fa fa-table"></i>Train Schedule </strong>
                     </div>
                     <!-- id="train-name-input"
@@ -38,8 +37,10 @@
                                         id="next-arrival-input" 
                                         id="destination-input"-->
 
-                    <div class="container col mb-4 justify-content-md-center">
+                                        <!-- col mb-4 justify-content-md-center -->
+                    <div class="container ">
                         <div class="card container">
+
                             <table>
                                 <thead class="container">
                                     <tr>
@@ -89,6 +90,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+
                         </div>
                         <br>
                         <!-- 
@@ -123,40 +125,47 @@
                         <form role="form" style="font-size: 30px;  padding-left:200px;padding-right: 200px;">
                             <div class="form-group">
                                 <form>
+                                    
                                     <div class="form-group row">
-                                        <label for="staticEmail"
-                                            class="col-sm-2 col-form-label">train-name-input</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" readonly class="form-control-plaintext" id="staticEmail"
-                                                value="email@example.com">
+                                        <label for="train-name-input"
+                                            class="col-sm-4 col-form-label">Train Name: </label>
+                                        <div class="col-sm-8">
+                                            <input type="text" readonly class="input-group input-group-lg" id="train-name-input"
+                                                value="tbd train-name-input">
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
                                         <label for="destination-input"
-                                            class="col-sm-2 col-form-label">destination-input</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="destination-input">
+                                            class="col-sm-4 col-form-label">Desintation City:</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="input-group input-group-lg" id="destination-input" value="tbd desination-input">
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
                                         <label for="frequency-input"
-                                            class="col-sm-2 col-form-label">frequency-input</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" readonly class="form-control-plaintext"
-                                                id="frequency-input" value="email@example.com">
+                                            class="col-sm-4 col-form-label">Frequency(min):</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" readonly class="input-group input-group-lg"
+                                                id="frequency-input" value="tbd frequency-input">
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
-                                        <label for="minutes-input" class="col-sm-2 col-form-label">minutes-input</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="minutes-input">
+                                        <label for="minutes-input" 
+                                            class="col-sm-4 col-form-label">Minutes to Arrival:</label>
+                                        
+                                        <div class="col-sm-8">
+                                            <input type="text" class="input-group input-group-lg" id="minutes-input" value="tbd minutes-input">
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
                                         <label for="next-arrival-input"
-                                            class="col-sm-2 col-form-label">next-arrival-input</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="next-arrival-input">
+                                            class="col-sm-4 col-form-label">Next Train Arrives:</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="input-group input-group-lg" id="next-arrival-input" value="tbd next-arrival-input" >
                                         </div>
                                     </div>
 
