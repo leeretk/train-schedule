@@ -1,4 +1,7 @@
+
 img {
+    opacity:0.4;
+    filter:alpha(opacity=40);
     width: 100%;
     height: 100%;
  }
@@ -6,3 +9,10 @@ img {
 .row {
      font-size: 10px;
  }
+
+ body {
+     background-image: url(../images/rafael-leao-YJ4hqRchpWE-unsplash.jpg);
+     background-size: cover;
+     margin: 10px;
+}
+
