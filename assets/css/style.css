@@ -1,4 +1,10 @@
 
+header {
+    color: #1B242C;
+    background-color: #CEADA4;
+}
+
+
 img {
     opacity:0.4;
     filter:alpha(opacity=40);
@@ -8,13 +14,13 @@ img {
 
 .row {
      font-size: 14px;
+    text-align: left;
  }
 
  body {
      background-image: url(../images/rafael-leao-YJ4hqRchpWE-unsplash.jpg);
      background-size: cover;
      background-repeat: no-repeat;
-     margin: 10px;
 }
 
 .form {
@@ -25,4 +31,19 @@ img {
 .container {
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 900px;
+}
+
+.card table {
+    width: 850px;
+}
+
+label {
+    font-weight: bolder;
+    width: fit-content;
+
+}
+
+tbody tr th td{
+    width: 850px;
 }

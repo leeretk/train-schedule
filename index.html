@@ -16,78 +16,86 @@
 
 
 
-    <header class="container" style="color:black;">
-        <h1 class="text-center">
+    <header class="card" >
+        <h1 class="text-center ">
             <strong><i class="fa fa-newspaper-o"></i> GCS Train Schedule </strong>
         </h1>
     </header>
- 
-    <!-- ******IMAGES LARGE CONTAINER******* -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card container">
 
-                    <div class="card-header text-center">
-                        <strong><i class="fa fa-table"></i>Train Schedule </strong>
+    <!-- ******IMAGES LARGE CONTAINER******* -->
+    <div class=container>
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <br>
+                <div class="card text-center">
+
+                    <div class="card-header" style="font-size: 20px; background-color:#4580A9; color: white">
+                        <strong><i class="fa fa-list-alt"></i> Train Schedule </strong>
                     </div>
+
                     <!-- id="train-name-input"
                                         id="frequency-input"
                                         id="minutes-input"
                                         id="next-arrival-input" 
                                         id="destination-input"-->
 
-                                        <!-- col mb-4 justify-content-md-center -->
-                    <div class="container ">
-                        <div class="card container">
-
-                            <table>
-                                <thead class="container">
+                    <!-- col mb-4 justify-content-md-center -->
+                    <div class="card">
+                        <div>
+                            <table class="container">
+                                <thead>
                                     <tr>
-                                        <th scope="col">Train Name</th>
-                                        <th scope="col">Destination</th>
-                                        <th scope="col">Frequency (Min)</th>
-                                        <th scope="col">Minutes to Arrival</th>
-                                        <th scope="col">Next Arrival</th>
+                                        <th scope="col-5">Train Name</th>
+                                        <th scope="col-5">Destination</th>
+                                        <th scope="col-5">Frequency (Min)</th>
+                                        <th scope="col-5">Minutes to Arrival</th>
+                                        <th scope="col-5">Next Arrival</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr id="trainId1">
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <th scope="row">16</th>
+                                        <td>Queens</td>
+                                        <td>4 min</td>
+                                        <td>2 min</td>
+                                        <td>0605</td>
                                     </tr>
                                     <tr id="trainId2">
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
+                                        <th scope="row">42</th>
+                                        <td>Manhatten</td>
+                                        <td>4 min</td>
+                                        <td>2 min</td>
+                                        <td>0605</td>
                                     </tr>
                                     <tr id="trainId3">
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
+                                        <th scope="row">34</th>
+                                        <td>Upstate New York</td>
+                                        <td>4 min</td>
+                                        <td>2 min</td>
+                                        <td>0605</td>
                                     </tr>
                                     <tr id="trainId4">
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
+                                        <th scope="row">30</th>
+                                        <td>Boston</td>
+                                        <td>4 min</td>
+                                        <td>2 min</td>
+                                        <td>0605</td>
                                     </tr>
                                     <tr id="trainId5">
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
+                                        <th scope="row">53</th>
+                                        <td>Nashville</td>
+                                        <td>4 min</td>
+                                        <td>2 min</td>
+                                        <td>0605</td>
                                     </tr>
                                     <tr id="trainId6">
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
+                                        <th scope="row">43</th>
+                                        <td>Denver</td>
+                                        <td>4 min</td>
+                                        <td>2 min</td>
+                                        <td>0605</td>
                                     </tr>
+
                                 </tbody>
                             </table>
 
@@ -109,14 +117,14 @@
 
     <!-- ROW FOR ADDING NEW TRAINS -->
     <div class=container>
-        <div class="row text-center">
+        <div class="row text-right">
             <div class="col-lg-12">
                 <br>
 
                 <!-- ****** ADD A NEW TRAIN HEADER ******* -->
-                <div class="card  text-center">
+                <div class="card text-center">
 
-                    <div class="card-header" style="font-size: 20px; background-color: #236192; color: white">
+                    <div class="card-header" style="font-size: 20px; background-color: #B6324F; color: white">
                         <strong><i class="fa fa-list-alt"></i> Add New Train </strong>
                     </div>
 
@@ -125,21 +133,22 @@
                         <form role="form" style="font-size: 30px;  padding-left:200px;padding-right: 200px;">
                             <div class="form-group">
                                 <form>
-                                    
+
                                     <div class="form-group row">
-                                        <label for="train-name-input"
-                                            class="col-sm-4 col-form-label">Train Name: </label>
+                                        <label for="train-name-input" class="col-sm-4 col-form-label">Train Name:
+                                        </label>
                                         <div class="col-sm-8">
-                                            <input type="text" readonly class="input-group input-group-lg" id="train-name-input"
-                                                value="tbd train-name-input">
+                                            <input type="text" readonly class="input-group input-group-lg"
+                                                id="train-name-input" value="tbd train-name-input">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="destination-input"
-                                            class="col-sm-4 col-form-label">Desintation City:</label>
+                                        <label for="destination-input" class="col-sm-4 col-form-label">Desintation
+                                            City:</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="input-group input-group-lg" id="destination-input" value="tbd desination-input">
+                                            <input type="text" class="input-group input-group-lg" id="destination-input"
+                                                value="tbd desination-input">
                                         </div>
                                     </div>
 
@@ -153,19 +162,21 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="minutes-input" 
-                                            class="col-sm-4 col-form-label">Minutes to Arrival:</label>
-                                        
+                                        <label for="minutes-input" class="col-sm-4 col-form-label">Minutes to
+                                            Arrival:</label>
+
                                         <div class="col-sm-8">
-                                            <input type="text" class="input-group input-group-lg" id="minutes-input" value="tbd minutes-input">
+                                            <input type="text" class="input-group input-group-lg" id="minutes-input"
+                                                value="tbd minutes-input">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="next-arrival-input"
-                                            class="col-sm-4 col-form-label">Next Train Arrives:</label>
+                                        <label for="next-arrival-input" class="col-sm-4 col-form-label">Next Train
+                                            Arrives:</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="input-group input-group-lg" id="next-arrival-input" value="tbd next-arrival-input" >
+                                            <input type="text" class="input-group input-group-lg"
+                                                id="next-arrival-input" value="tbd next-arrival-input">
                                         </div>
                                     </div>
 
