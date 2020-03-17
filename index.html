@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="assets\css\style.css">
 </head>
 
-<body >
+<body>
 
-    <header class="card" >
-        <h1 class="text-center ">
-            <strong><i class="fa fa-newspaper-o" ></i> GCS Train Schedule </strong>
+    <header class="container">
+        <h1 class="card-header text-center" >
+            <strong><i></i> GCS Train Schedule </strong>
         </h1>
     </header>
 
@@ -27,8 +27,8 @@
                 <br>
                 <div class="card text-center">
 
-                    <div class="card-header" style="font-size: 20px; background-color: white; color:black">
-                        <strong><i class="fa fa-list-alt"></i> Train Schedule </strong>
+                    <div class="card-header" >
+                        <strong><i></i> Train Schedule </strong>
                     </div>
 
                     <!-- id="train-name-input"
@@ -120,59 +120,61 @@
                 <br>
 
                 <!-- ****** ADD A NEW TRAIN HEADER ******* -->
-                <div class="card text-center" >
+                <div class="card text-center">
 
-                    <div class="card-header" >
-                        <strong><i class="fa fa-list-alt"style="font-size: 20px; background-color:#0035AA white"></i> Add New Train </strong>
+                    <div class="card-header">
+                        <strong><i></i> Add New Train </strong>
                     </div>
 
-                    <!-- ******INPUT FORM TO ADD A NEW TRAIN*******-->
+                    <!-- ******INPUT FORM TO ADD A NEW TRAIN******* padding-left:100px;padding-right: 100px;-->
                     <div class="card-body">
-                        <form role="form" style="font-size: 30px; padding-left:200px;padding-right: 200px;">
+                        <form role="form" style="font-size: 30px; ">
                             <div class="form-group">
                                 <form>
 
                                     <div class="form-group row">
-                                        <label for="train-name-input" class="col col-form-label">Train Name:
+                                        <label for="train-name-input" class="col-6 col-md-4 col-form-label">Train Name:
                                         </label>
-                                        <div class="col">
-                                            <input type="text" class="input-group input-group-lg"
-                                                id="train-name-input" value="tbd train-name-input">
+                                        <div class="col-6 col-md-4">
+                                            <input type="text" id="train-name-input"
+                                                value="tbd train-name-input">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="destination-input" class="col col-form-label">Desintation
+                                        <label for="destination-input" class="col-6 col-md-4 col-form-label">Desintation
                                             City:</label>
-                                        <div class="col">
-                                            <input type="text" class="input-group input-group-lg" id="destination-input"
+                                        <div class="col-6 no-gutters col-md-4">
+                                            <input type="text" id="destination-input"
                                                 value="tbd desination-input">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="frequency-input"
-                                            class="col col-form-label">Frequency(min):</label>
-                                        <div class="col">
-                                            <input type="text" class="input-group input-group-lg"
-                                                id="frequency-input" value="tbd frequency-input">
+                                        <label for="frequency-input" class="col-6 col-md-4 col-form-label">Frequency(min):</label>
+                                        <div class="col-6 col-md-4">
+                                            <input type="text" id="frequency-input"
+                                                value="tbd frequency-input">
                                         </div>
                                     </div>
 
+<!-- #CF0820
+#0035AA
+#FFFFFF -->
+
                                     <div class="form-group row">
-                                        <label for="minutes-input" class="col col-form-label">Minutes to
-                                            Arrival:</label>
-                                        <div class="col">
-                                            <input type="text" class="input-group input-group-lg" id="minutes-input"
+                                        <label for="minutes-input" class="col-6 col-md-4 col-form-label" >Minutes to Arrival:</label>
+                                        <div class="col-6 col-md-4">
+                                            <input type="text" id="minutes-input"
                                                 value="tbd minutes-input">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="next-arrival-input" class="col col-form-label">Next Train
+                                        <label for="next-arrival-input" class="col-6 col-md-4 col-form-label">Next Train
                                             Arrives:</label>
-                                        <div class="col">
-                                            <input type="text" class="input-group input-group-lg"
+                                        <div class="col-6 col-md-4">
+                                            <input type="text" 
                                                 id="next-arrival-input" value="tbd next-arrival-input">
                                         </div>
                                     </div>
@@ -181,8 +183,14 @@
 
                             <!--******SUBMIT BUTTON*******-->
                             <div class="form-group">
-                                <button type="submit" class="btn btn-secondary buttonSubmit" id="add-new-train">
-                                    <i class="fa fa-search"></i>Add New Train
+                                <button type="submit" class="btn buttonSubmit" id="arrow-left">
+                                    <i></i>Arrow Left
+                                </button>
+                                <button type="submit" class="btn buttonSubmit" id="add-new-train">
+                                    <i></i>Add New Train
+                                </button>
+                                <button type="submit" class="btn buttonSubmit" id="arrow-right">
+                                    <i></i>Arrow Right
                                 </button>
                             </div>
                         </form>
@@ -203,12 +211,6 @@
 
 </html>
 
-
-
-
-
 </body>
-
-
 
 </html>

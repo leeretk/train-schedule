@@ -1,11 +1,20 @@
 
 header {
-    color: #1B242C;
-    font-size: 20px; 
-    background-color: #0035AA; 
-
+    color: white;
+    font-size: 60px; 
+    width: 800px;
+    border-color: red;
+    border-width: 2px;
 }
 
+.card-header {
+    color: white;
+    font-size: 50px; 
+    background-color:#0035AA;
+    border-color: white;
+    width: 800px;
+    
+}
 
 img {
     opacity:0.4;
@@ -27,25 +36,40 @@ img {
 
 .form {
     margin-bottom: 20px;
-    
+
 } 
 
 .container {
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 900px;
+    width: 800px;
 }
 
-.card table {
-    width: 850px;
+.card {
+    width: 800px;
+}
+
+table {
+    width: 800px;
 }
 
 label {
     font-weight: bolder;
-    width: fit-content;
-
-}
+    margin-left: 40px;
+    padding: 0%;
+    text-align: right;
+    }
 
 tbody tr th td{
-    width: 850px;
+    width: 800px;
+}
+
+button {
+    background-color: #cf0820;
+    color: white;
+}
+
+input {
+    width: 300px;
+    padding: 0%;
 }
