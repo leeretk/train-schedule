@@ -7,15 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
     <title>TrainSchedule</title>
+    <!-- Bootstrap -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
     <link rel="stylesheet" href="assets\css\style.css">
+
+
+
+
 </head>
 
 <body>
 
     <header class="container">
-        <h1 class="card-header text-center" >
+        <h1 class="card-header text-center">
             <strong><i></i> GCS Train Schedule </strong>
         </h1>
     </header>
@@ -27,20 +33,15 @@
                 <br>
                 <div class="card text-center">
 
-                    <div class="card-header" >
+                    <div class="card-header">
                         <strong><i></i> Train Schedule </strong>
                     </div>
 
-                    <!-- id="train-name-input"
-                                        id="frequency-input"
-                                        id="minutes-input"
-                                        id="next-arrival-input" 
-                                        id="destination-input"-->
 
                     <!-- col mb-4 justify-content-md-center -->
                     <div class="card">
                         <div>
-                            <table class="container">
+                            <table class="container" id="train-table">
                                 <thead>
                                     <tr>
                                         <th scope="col-5">Train Name</th>
@@ -50,60 +51,15 @@
                                         <th scope="col-5">Next Arrival</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr id="trainId1">
-                                        <th scope="row">16</th>
-                                        <td>Queens</td>
-                                        <td>4 min</td>
-                                        <td>2 min</td>
-                                        <td>0605</td>
-                                    </tr>
-                                    <tr id="trainId2">
-                                        <th scope="row">42</th>
-                                        <td>Manhatten</td>
-                                        <td>4 min</td>
-                                        <td>2 min</td>
-                                        <td>0605</td>
-                                    </tr>
-                                    <tr id="trainId3">
-                                        <th scope="row">34</th>
-                                        <td>Upstate New York</td>
-                                        <td>4 min</td>
-                                        <td>2 min</td>
-                                        <td>0605</td>
-                                    </tr>
-                                    <tr id="trainId4">
-                                        <th scope="row">30</th>
-                                        <td>Boston</td>
-                                        <td>4 min</td>
-                                        <td>2 min</td>
-                                        <td>0605</td>
-                                    </tr>
-                                    <tr id="trainId5">
-                                        <th scope="row">53</th>
-                                        <td>Nashville</td>
-                                        <td>4 min</td>
-                                        <td>2 min</td>
-                                        <td>0605</td>
-                                    </tr>
-                                    <tr id="trainId6">
-                                        <th scope="row">43</th>
-                                        <td>Denver</td>
-                                        <td>4 min</td>
-                                        <td>2 min</td>
-                                        <td>0605</td>
-                                    </tr>
 
+                                <tbody id="train-table">
+                                    <tr>
+                                        <th scope="row" id="newRow">
+                                        </th>
+                                    </tr>
                                 </tbody>
                             </table>
-
                         </div>
-                        <br>
-                        <!-- 
-                        <div class="card-body">
-                                <p id="" alt="" style="padding: 15px;"></p>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -136,8 +92,7 @@
                                         <label for="train-name-input" class="col-6 col-md-4 col-form-label">Train Name:
                                         </label>
                                         <div class="col-6 col-md-4">
-                                            <input type="text" id="train-name-input"
-                                               >
+                                            <input type="text" id="train-name-input">
                                         </div>
                                     </div>
 
@@ -145,28 +100,22 @@
                                         <label for="destination-input" class="col-6 col-md-4 col-form-label">Destination
                                             City:</label>
                                         <div class="col-6 no-gutters col-md-4">
-                                            <input type="text" id="destination-input"
-                                                >
+                                            <input type="text" id="destination-input">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="frequency-input" class="col-6 col-md-4 col-form-label">Frequency(min):</label>
+                                        <label for="frequency-input"
+                                            class="col-6 col-md-4 col-form-label">Frequency(min):</label>
                                         <div class="col-6 col-md-4">
-                                            <input type="text" id="frequency-input"
-                                                >
+                                            <input type="text" id="frequency-input">
                                         </div>
                                     </div>
-
-<!-- #CF0820
-#0035AA
-#FFFFFF -->
-
                                     <div class="form-group row">
-                                        <label for="minutes-input" class="col-6 col-md-4 col-form-label" >Minutes to Arrival:</label>
+                                        <label for="minutes-input" class="col-6 col-md-4 col-form-label">Minutes to
+                                            Arrival:</label>
                                         <div class="col-6 col-md-4">
-                                            <input type="text" id="minutes-input"
-                                               >
+                                            <input type="text" id="minutes-input">
                                         </div>
                                     </div>
 
@@ -174,24 +123,17 @@
                                         <label for="next-arrival-input" class="col-6 col-md-4 col-form-label">Next Train
                                             Arrives:</label>
                                         <div class="col-6 col-md-4">
-                                            <input type="text" 
-                                                id="next-arrival-input" >
+                                            <input type="text" id="next-arrival-input">
                                         </div>
                                     </div>
-                                    <div id="counter-input">RecordCount                                    </div>
+                                    <div id="counter-input">RecordCount </div>
 
                             </div>
 
-                            <!--******SUBMIT BUTTON*******-->
+                            <!--******ADD A TRAIN SUBMIT BUTTON*******-->
                             <div class="form-group">
-                                <button class="btn buttonSubmit" id="arrow-left">
-                                    <i></i>Arrow Left
-                                </button>
-                                <button  class="btn buttonSubmit" id="add-new-train">
+                                <button class="btn buttonSubmit" id="add-new-train">
                                     <i></i>Add New Train
-                                </button>
-                                <button class="btn buttonSubmit" id="arrow-right">
-                                    <i></i>Arrow Right
                                 </button>
                             </div>
                         </form>
@@ -207,6 +149,11 @@
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Moment.js Reference -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+
 
 </body>
 

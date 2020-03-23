@@ -8,13 +8,7 @@ var config = {
 };
 
 firebase.initializeApp(config);
-
-
-// VARIABLES  // 
-
 var database = firebase.database();
-
-
 
 var clickCounter = 0;
 var destination = "";
@@ -22,8 +16,6 @@ var trainFrequency = 0;
 var minutesAway = 0;
 var nextArrival = 0;
 var trainName = 0;
-
-
 
 ///// ADD RECORDS TO THE DATABASE //////
 
@@ -33,6 +25,7 @@ $("#add-new-train").on("click", function () {
   clickCounter++;
   console.log()
 
+  //grabs user input//
   clickCounter = $("#counter-input").val().trim();
   destination = $("#destination-input").val().trim();
   trainFrequency = $("#frequency-input").val().trim();
@@ -40,40 +33,71 @@ $("#add-new-train").on("click", function () {
   nextArrival = $("#next-arrival-input").val().trim();
   trainName = $("#train-name-input").val().trim();
 
-var train = {
-  clickCounter: clickCounter,
-  destination: destination,
-  trainFrequency: trainFrequency,
-  minutesAway: minutesAway,
-  nextArrival: nextArrival,
-  trainName: trainName,
-}
-  database.ref().push(train)
-  console.log("got a train" + train)
+  //creates local "temporary" object for holding train data//
+  var trainPush = {
+    clickCounter: clickCounter,
+    destination: destination,
+    trainFrequency: trainFrequency,
+    minutesAway: minutesAway,
+    nextArrival: nextArrival,
+    trainName: trainName,
+  };
+
+  //uploads data to the database
+  database.ref().push(trainPush);
+
+  console.log("got a train" + trainPush);
+  console.log(trainPush.clickCounter);
+  console.log(trainPush.destination);
+  console.log(trainPush.trainFrequency);
+  console.log(trainPush.minutesAway);
+  console.log(trainPush.nextArrival);
+  console.log(trainPush.trainName);
+
+  // Clears all of the text-boxes
+  $("#train-name-input").val("");
+  $("#counter-input").val("");
+  $("#destination-input").val("");
+  $("#frequency-input").val("");
+  $("#minutes-input").val("");
+  $("#frequency-input").val("");
+  $("#minutes-input").val("");
+
 });
 
-// MAIN PROCESS + INITIAL CODE // 
+//create a firebase event
 
-// database.ref("/train-schedule").on("value", function (snapshot) {
-//   console.log(snapshot.val());
+database.ref().on("child_added", function(childSnapshot){
+  console.log(childSnapshot.val());
+  var trainName =childSnapshot.val().trainName;
+  var trainDestination =childSnapshot.val().destination;
+  var trainFrequency =childSnapshot.val().trainFrequency;
+  var trainMinutesAway =childSnapshot.val().minutesAway;
+  var trainNextArrival =childSnapshot.val().nextArrival;
 
-//   clickCounter = snapshot.val().clickCount;
-//   console.log(clickCounter);
+  // console.log("trainName: " +  trainName);
+  // console.log("trainDesintation: " +  trainDestination);
+  // console.log("trainFrequency: " +  trainFrequency);
+  // console.log("trainMinutesAway: " +  trainMinutesAway);
+  // console.log("trainNextArrival: " +  trainNextArrival);
+  
+ // Prettify Arrival Time
+ var trainNextArrivalPretty = moment.unix(trainNextArrival).format("HH:mm");
+//  var trainMinutesAwayPretty = moment.unix(trainMinutesAway).format(":mm");
+//  var trainFrequencyPretty = moment.unix(trainFrequency).format(":mm");
 
-//   // Log the value of the various properties
-//   console.log(snapshot.val().clickCounter);
-//   console.log(snapshot.val().destination);
-//   console.log(snapshot.val().trainFrequency);
-//   console.log(snapshot.val().minutesAway);
-//   console.log(snapshot.val().nextArrival);
-//   console.log(snapshot.val().trainName);
+  // Create the new row
+  var newRow = $("<tr>").append(
+    $("<td>").text(trainName),
+    $("<td>").text(trainDestination),
+    $("<td>").text(trainFrequency),
+    $("<td>").text(trainMinutesAway),
+    $("<td>").text(trainNextArrival),
+  );
 
-//   // Change the HTML
-//   $("#displayed-data").text(snapshot.val().clickCounter + " | " + snapshot.val().destination + " | " + snapshot.val().trainFrequency + " | " + snapshot.val().minutesAway + " | " + snapshot.val().nextArrival + " | " + snapshot.val().trainName);
+ // Append the new row to the table
+ $("#train-table > tbody").append(newRow);
 
-//   // If any errors are experienced, log them to console.
-// }, function (errorObject) {
-//   console.log("The read failed: " + errorObject.code);
-// });
+});
 
 
