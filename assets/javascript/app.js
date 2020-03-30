@@ -11,6 +11,8 @@ var config = {
 firebase.initializeApp(config);
 var trainData = firebase.database();
 
+///// ADD RECORDS TO THE FIREBASE DATABASE //////
+
 //set variables//
 var clickCounter = 0;
 var trainName = 0;
@@ -18,9 +20,8 @@ var destination = "";
 var trainFrequency = 0; //tfrequency//
 var firstTrainTime = 0;
 
-///// ADD RECORDS TO THE FIREBASE DATABASE //////
 
-$("#add-new-train").on("click", function () {
+$("#add-new-train-btn").on("click", function () {
   event.preventDefault();
   clickCounter++;
   console.log()
@@ -38,8 +39,8 @@ $("#add-new-train").on("click", function () {
     trainDestination: trainDestination,
     trainFrequency: trainFrequency,
     firstTrainTime: firstTrainTime,
-    arrivalTime: arrivalTime,
     minutesAway: minutesAway,
+    arrivalTime: arrivalTime,
   };
 
   //uploads data to the database
@@ -61,8 +62,6 @@ $("#add-new-train").on("click", function () {
   $("#destination-input").val("");
   $("#frequency-input").val("");
   $("#first-train-input").val("");
-  $("#minutes-away-input").val("");
-  $("#arrival-time-input").val("");
 });
 
 ///// CREATE A FIREBASE EVENT //////
@@ -76,12 +75,12 @@ trainData.ref().on("child_added", function(childSnapshot){
   var tName         =childSnapshot.val().trainName;
   var tDestination  =childSnapshot.val().traindestination;
   var tFrequency    =childSnapshot.val().trainFrequency;
-  var tFirstTrain   =childSnapshot.val().firstTrain
+  var tFirstTrain   =childSnapshot.val().firstTrainTime;
   var trainCount    =childSnapshot.val().clickCounter;
-   
+  var tMinutesAway   =childSnapshot.val().minutesAway;
+  var tArrivalTime  =childSnapshot.val().arrivalTime;
+  
   var maxMoment = moment.max(moment(), tFirstTrain);
-  var minutesAway;
-  var arrivalTime;
 
   if (maxMoment === tFirstTrain) {
     arrivalTime = tFirstTrain.format("hh:mm A");
@@ -91,13 +90,13 @@ trainData.ref().on("child_added", function(childSnapshot){
 
     var diffTime = moment().diff(tFirstTrain, "minutes");
     var timeRemaining = diffTime % tFrequency; 
-    minutesAway = tFrequency - timeRemaining;
 
-    // To calculate the arrival time, add the tMinutes to the current time
-    arrivalTime = moment().add(minutesAway, "m").format("hh:mm A");
+    minutesAway = tFrequency - timeRemaining;  
+    arrivalTime = moment().add(tMinutesAway, "m").format("hh:mm A");
   }
-  console.log("minutesAway:", minutesAway);
-  console.log("arrivalTime:", arrivalTime);
+
+  console.log("minutesAway:", tMinutesAway);
+  console.log("arrivalTime:", tArrivalTime);
   console.log("Time Remaining: " + timeRemaining);
 
 // Add each train's data into the table
@@ -107,8 +106,9 @@ trainData.ref().on("child_added", function(childSnapshot){
       $("<td>").text(tName),
       $("<td>").text(tDestination),
       $("<td>").text(tFrequency),
-      $("<td>").text(minutesAway),
-      $("<td>").text(arrivalTime),
+      $("<td>").text(tFirstTrain),
+      $("<td>").text(tMinutesAway),
+      $("<td>").text(tArrivalTime),
     )
   );
 });
