@@ -31,6 +31,8 @@ $("#add-new-train-btn").on("click", function () {
   var trainDestination = $("#destination-input").val().trim();
   var trainFrequency = $("#frequency-input").val().trim();
   var firstTrainTime = $("#first-train-input").val().trim();
+  var arrivalTime = $("#arrival-time-input").val().trim();
+  var minutesAway = $("#minutes-away-input").val().trim();
 
   //creates local "temporary" object for holding train data//
   var trainPush = {
@@ -62,6 +64,9 @@ $("#add-new-train-btn").on("click", function () {
   $("#destination-input").val("");
   $("#frequency-input").val("");
   $("#first-train-input").val("");
+  $("#minute-away-input").val("");
+  $("#arrival-time-input").val("");
+
 });
 
 ///// CREATE A FIREBASE EVENT //////
@@ -85,22 +90,18 @@ trainData.ref().on("child_added", function(childSnapshot){
   if (maxMoment === tFirstTrain) {
     arrivalTime = tFirstTrain.format("hh:mm A");
     minutesAway = tFirstTrain.diff(moment(), "minutes");
-
   } else {
-
     var diffTime = moment().diff(tFirstTrain, "minutes");
     var timeRemaining = diffTime % tFrequency; 
-
     minutesAway = tFrequency - timeRemaining;  
     arrivalTime = moment().add(tMinutesAway, "m").format("hh:mm A");
-  }
-
+  };
   console.log("minutesAway:", tMinutesAway);
   console.log("arrivalTime:", tArrivalTime);
   console.log("Time Remaining: " + timeRemaining);
 
 // Add each train's data into the table
-  $("#train-table > tbody").append(
+$("#train-table > tbody").append(
     $("<tr>").append(
       $("<td>").text(trainCount),
       $("<td>").text(tName),
