@@ -13,10 +13,12 @@ var trainData = firebase.database();
 
 ///// ADD RECORDS TO THE FIREBASE DATABASE //////
 
+
+
 //set variables//
 var clickCounter = 0;
 var trainName = 0;
-var destination = "";
+var trainDestination = "";
 var trainFrequency = 0; //tfrequency//
 var firstTrainTime = 0;
 
@@ -24,15 +26,16 @@ var firstTrainTime = 0;
 $("#add-new-train-btn").on("click", function () {
   event.preventDefault();
   clickCounter++;
-  console.log()
+  console.log(clickCounter)
+  console.log();
 
   //grabs user input//
   var trainName = $("#train-name-input").val().trim();
   var trainDestination = $("#destination-input").val().trim();
   var trainFrequency = $("#frequency-input").val().trim();
   var firstTrainTime = $("#first-train-input").val().trim();
-  var arrivalTime = $("#arrival-time-input").val().trim();
-  var minutesAway = $("#minutes-away-input").val().trim();
+  // var arrivalTime = $("#arrival-time-input").val().trim();
+  // var minutesAway = $("#minutes-away-input").val().trim();
 
   //creates local "temporary" object for holding train data//
   var trainPush = {
@@ -41,15 +44,15 @@ $("#add-new-train-btn").on("click", function () {
     trainDestination: trainDestination,
     trainFrequency: trainFrequency,
     firstTrainTime: firstTrainTime,
-    minutesAway: minutesAway,
-    arrivalTime: arrivalTime,
+    // minutesAway: minutesAway,
+    // arrivalTime: arrivalTime,
   };
 
   //uploads data to the database
   trainData.ref().push(trainPush);
 
   console.log("got a train" + trainPush);
-  console.log(trainPush.clickCounter);
+  console.log("train count" + trainPush.clickCounter);
   console.log(trainPush.trainName);
   console.log(trainPush.trainDestination);
   console.log(trainPush.trainFrequency);
@@ -59,7 +62,6 @@ $("#add-new-train-btn").on("click", function () {
   alert("Train successfully added");
 
   // Clears all of the text-boxes
-  $("#counter-input").val("");
   $("#train-name-input").val("");
   $("#destination-input").val("");
   $("#frequency-input").val("");
@@ -78,38 +80,47 @@ trainData.ref().on("child_added", function(childSnapshot){
 
   // store everything into a variable
   var tName         =childSnapshot.val().trainName;
-  var tDestination  =childSnapshot.val().traindestination;
+  var tDestination  =childSnapshot.val().trainDestination;
   var tFrequency    =childSnapshot.val().trainFrequency;
   var tFirstTrain   =childSnapshot.val().firstTrainTime;
   var trainCount    =childSnapshot.val().clickCounter;
-  var tMinutesAway   =childSnapshot.val().minutesAway;
-  var tArrivalTime  =childSnapshot.val().arrivalTime;
+  var minutesAway;
+  var arrivalTime;
   
-  var maxMoment = moment.max(moment(), tFirstTrain);
+
+  console.log("first train time" + tFirstTrain);
+
+  var firstTrainSplit = tFirstTrain.split(":");  
+  var tFirstTrainMoment = moment().hours(firstTrainSplit[0]).minutes(firstTrainSplit[1]);
+
+  
+  console.log("t-first-train-moment" + tFirstTrainMoment)
+
+  var maxMoment = moment.max(moment(), tFirstTrainMoment);
+  console.log("max moment: " + maxMoment);
 
   if (maxMoment === tFirstTrain) {
     arrivalTime = tFirstTrain.format("hh:mm A");
     minutesAway = tFirstTrain.diff(moment(), "minutes");
   } else {
-    var diffTime = moment().diff(tFirstTrain, "minutes");
+    var diffTime = moment().diff(tFirstTrainMoment, "minutes");
     var timeRemaining = diffTime % tFrequency; 
     minutesAway = tFrequency - timeRemaining;  
-    arrivalTime = moment().add(tMinutesAway, "m").format("hh:mm A");
+    arrivalTime = moment().add(minutesAway, "m").format("hh:mm A");
   };
-  console.log("minutesAway:", tMinutesAway);
-  console.log("arrivalTime:", tArrivalTime);
+  console.log("minutesAway:", minutesAway);
+  console.log("arrivalTime:", arrivalTime);
   console.log("Time Remaining: " + timeRemaining);
 
 // Add each train's data into the table
 $("#train-table > tbody").append(
     $("<tr>").append(
-      $("<td>").text(trainCount),
+      // $("<td>").text(trainCount),
       $("<td>").text(tName),
       $("<td>").text(tDestination),
       $("<td>").text(tFrequency),
-      $("<td>").text(tFirstTrain),
-      $("<td>").text(tMinutesAway),
-      $("<td>").text(tArrivalTime),
+      $("<td>").text(minutesAway),
+      $("<td>").text(arrivalTime),
     )
   );
 });
