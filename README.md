@@ -11,15 +11,15 @@ Data Connection:
 -[] Firebase
 
 Attributes:
--[] Train Counter
--[] Train Name
--[] Train Destination
--[] Train Frequency
--[] Minutes Away
--[] Arrival Time
+-[ ] Train Counter
+-[ ] Train Name
+-[ ] Train Destination
+-[ ] Train Frequency
+-[ ] Minutes Away
+-[ ] Arrival Time
 
 Color Scheme: Red, White and Blue
--[] background-color:#0035AA;
--[] border-color: red;
+-[ ] background-color:#0035AA;
+-[ ] border-color: red;
 
 C:\Users\Kamy\Employer-Ready-Profile\assets\images\train_schedule_img.png
