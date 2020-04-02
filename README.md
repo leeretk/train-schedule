@@ -3,7 +3,7 @@
 https://leeretk.github.io/train-schedule/
 
 
-![] C:\Users\Kamy\Employer-Ready-Profile\assets\images\train_schedule_img.png
+![](https://github.com/leeretk/Employer-Ready-Profile/blob/master/assets/images/train_schedule_img.png)
 
 # What is it? 
 
