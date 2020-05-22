@@ -73,3 +73,31 @@ input {
     width: 300px;
     padding: 0%;
 }
+@media (max-width: 600px) {
+    nav, footer, header body .container{
+        width: 100%;
+   }}
+  @media (max-height: 250px) {
+    nav, footer, heade, body  .container{
+        width: 100%;
+   }
+  }
+  @media (min-width: 576px) {
+    nav, footer, header, body .container{
+        padding: 0px;
+   }
+  }
+  @media (min-width: 768px) {
+    nav, footer, header, body .container{
+        padding: 0px;
+   }
+  } 
+  @media (min-width: 992px) {
+    nav, footer, header, body .container {
+        padding: 0px;
+   }
+  }
+   @media (min-width: 1200px) {
+    nav, footer, header, body  .container {
+        padding: 0px; 
+   }}
