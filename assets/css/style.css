@@ -3,14 +3,14 @@ header {
     color: white;
     font-size: 60px; 
     width: 800px;
-    border-color: red;
+    border-color: rgb(104,139,56);
     border-width: 2px;
 }
 
 .card-header {
     color: white;
     font-size: 50px; 
-    background-color:#0035AA;
+    background-color:rgb(39, 79, 114);
     border-color: white;
     width: 800px;
     
@@ -65,7 +65,7 @@ tbody tr th td{
 }
 
 button {
-    background-color: #cf0820;
+    background-color: rgb(104,139,56);
     color: white;
 }
 
